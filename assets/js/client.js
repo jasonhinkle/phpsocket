@@ -6,7 +6,8 @@ $(document).ready(function(){
 
 	$('#status').removeClass().addClass('alert alert-info').html('Opening WebSocket...');
 	
-	var ws = new WebSocket('ws://localhost:8080/');
+	var url = window.location.href.replace('http','ws').replace('/phpsocket',':8080'); // = ws://localhost:8080/
+	var ws = new WebSocket(url);
 
 	/**
 	 * Fires when communication is confirmed between the client and server
