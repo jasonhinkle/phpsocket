@@ -4,28 +4,30 @@
 
 $(document).ready(function(){
 
-	$('#result').append('<div>Opening WebSocket...</div>');
+	$('#status').removeClass().addClass('alert alert-info').html('Opening WebSocket...');
+	
 	var ws = new WebSocket('ws://localhost:8080/');
 
 	/**
 	 * Fires when communication is confirmed between the client and server
 	 */
 	ws.onopen = function() {
-		$('#result').append('<div>WebSocket open.</div>');
+		$('#status').removeClass().addClass('alert alert-success').html('WebSocket Open');
 	};
 
 	/**
 	 * Fires when communication is lost or ended between the client and server
 	 */
 	ws.onclose = function() {
-		$('#result').append('<div>WebSocket closed.</div>');
+		$('#status').removeClass().addClass('alert alert-danger').html('WebSocket Closed');
 	};
 
 	/**
 	 * Fires whenever the server echos a line
 	 */
 	ws.onmessage = function(event) {
-		$('#result').append('<div>'+event.data+'</div>');
+		var normalized = event.data.replace(/\\n/g,'<br>');
+		$('#result').html(normalized);
 	};
 
 	/**

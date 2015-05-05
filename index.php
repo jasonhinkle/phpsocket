@@ -47,7 +47,9 @@
 
 		</form>
 	
-		<div id="result" class="alert alert-success"></div>
+		<div id="status" class="alert"></div>
+		
+		<p id="result" class="well"></p>
 	
 	</div>
 	
