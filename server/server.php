@@ -8,7 +8,9 @@
  */
 
 require_once 'fgets_u.php';
+
 date_default_timezone_set('America/Chicago');
+
 $stdin = fopen('php://stdin', 'r');
 $data = '';
 
@@ -28,7 +30,7 @@ while (true) {
 		echo str_replace("\n", "\\n", $data) . "\n";
 	}
 	
-	// add a slight delay to avoid hamering the server
+	// add a slight delay to avoid hammering the server
 	usleep(.25 * 1000000);
 	
 }
