@@ -2,7 +2,7 @@
 <?php
 /**
  * Example two-way communication WebSocket server using websocketd
-
+ * 
  * @author Jason Hinkle http://verysimple.com/
  * @see http://websocketd.com/
  */
