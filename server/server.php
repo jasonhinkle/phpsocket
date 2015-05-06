@@ -1,13 +1,13 @@
 #!/usr/bin/php
 <?php
 /**
- * Example two-way communication WebSocket server using websocketd
+ * Example bi-directional communication WebSocket server using websocketd
  * 
  * @author Jason Hinkle http://verysimple.com/
  * @see http://websocketd.com/
  */
 
-require_once 'fgets_u.php';
+require_once 'libs/fgets_u.php';
 
 date_default_timezone_set('America/Chicago');
 
@@ -31,6 +31,6 @@ while (true) {
 	}
 	
 	// add a slight delay to avoid hammering the server
-	usleep(.25 * 1000000);
+	// usleep(.25 * 1000000);
 	
 }
